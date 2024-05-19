@@ -374,3 +374,16 @@ Citizen.CreateThread(function()
         end
     end
 end)
+
+-- DESATIVA O TAB
+
+Citizen.CreateThread(function()
+	while true do
+		Citizen.Wait(1)
+		local ped = PlayerPedId()
+		local health = GetEntityHealth(ped)
+		if health >= 101 then
+		DisableControlAction(0,37,true)
+		end
+	end
+end)
